@@ -1,0 +1,49 @@
+model:
+  _target_: colat.models.NonlinearConditional
+  normalize: true
+  alpha:
+  - -7.0
+  - 7.0
+  depth: 3
+  size: 512
+loss:
+  _target_: colat.loss.ContrastiveLoss
+  temp: 0.5
+  abs: true
+  reduce: mean
+generator:
+  _target_: colat.generators.StyleGAN2Generator
+  device: cuda
+  truncation: 0.7
+  class_name: church
+  use_w: true
+  feature_layer: conv1
+projector:
+  _target_: colat.projectors.IdentityProjector
+  normalize: true
+hparams:
+  batch_size: 8
+  iterations: 10000
+  grad_clip_max_norm: null
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 0.001
+    weight_decay: 0.001
+  scheduler:
+    _target_: torch.optim.lr_scheduler.MultiStepLR
+    milestones:
+    - 1000
+    - 5000
+    gamma: 0.2
+checkpoint: null
+tensorboard: true
+auto_cpu_if_no_gpu: true
+device: cuda:0
+mixed_precision: false
+save: true
+eval_freq: 1000
+eval_iters: 100
+k: 100
+feed_layers: null
+train_projector: true
+epoch: 3

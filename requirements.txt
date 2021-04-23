@@ -1,0 +1,10 @@
+numpy
+scipy
+torch==1.7.1
+tensorboard
+hydra-core
+tqdm
+matplotlib
+seaborn
+pytorch-pretrained-biggan==0.1.1
+nltk==3.5

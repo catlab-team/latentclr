@@ -1,0 +1,7 @@
+# @package _group_
+_target_: colat.generators.BigGANGenerator
+resolution: 256
+device: cuda
+truncation: 0.4
+class_name: husky
+feature_layer: generator.layers.0

@@ -1,0 +1,10 @@
+# @package _group_
+# By default, this group is not activated
+# If you want to change the optimizer from the default one in the configuration, \
+# override with +hparams/optimizer
+_target_: torch.optim.SGD
+lr: 0.1
+weight_decay: 5e-4
+momentum: 0.1
+nesterov: true
+

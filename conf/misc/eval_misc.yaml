@@ -1,0 +1,13 @@
+# @package _global_
+checkpoint: ???
+
+auto_cpu_if_no_gpu: true
+device: cuda:0
+
+hparams:
+  batch_size: 32
+  iterations: 100
+
+k: 32
+feed_layers: null
+train_projector: true

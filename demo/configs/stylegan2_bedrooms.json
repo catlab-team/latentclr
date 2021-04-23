@@ -1,0 +1,13 @@
+{
+    "MODEL_DIR": "models/stylegan2/bedrooms",
+    "DIRECTIONS": {
+        "sunlight": [1,0],
+        "lamp": [8,2],
+        "window": [10,1]        
+    },
+    "LAYER_MAPS": {
+        "0": [6,7,8,9,10,11,12,13],
+        "1": [4,5],
+        "2": [0,1,2,3,4,5,6] 
+    }
+}

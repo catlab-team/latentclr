@@ -1,0 +1,5 @@
+# @package _group_
+_target_: colat.loss.ContrastiveLoss
+temp: 0.5
+abs: True
+reduce: mean

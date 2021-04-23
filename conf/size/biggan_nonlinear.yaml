@@ -1,0 +1,7 @@
+model:
+  size: 128
+
+projector:
+  in_features: 128
+  middle_features: 64
+  out_features: 32

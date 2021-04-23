@@ -1,0 +1,14 @@
+hparams:
+  batch_size: 32
+  iterations: 100000
+  grad_clip_max_norm: null # change to float to activate
+
+  optimizer:
+    _target_: torch.optim.Adam
+    lr: 0.001
+    weight_decay: 1e-3  
+
+  scheduler:
+    _target_: torch.optim.lr_scheduler.MultiStepLR
+    milestones: [1000, 5000]
+    gamma: 0.2

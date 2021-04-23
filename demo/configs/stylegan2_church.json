@@ -1,0 +1,13 @@
+{
+    "MODEL_DIR": "models/stylegan2/church",
+    "DIRECTIONS": {
+        "clouds": [2,0],
+        "sunlight": [7,0],
+        "sky": [24,0],
+        "style": [28,1]        
+    },
+    "LAYER_MAPS":{    
+        "0": [6,7,8,9,10,11,12,13],
+        "1": [2,3,4,5,6,7,8,9,10,11,12,13]
+    }
+}

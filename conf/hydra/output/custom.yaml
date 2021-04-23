@@ -1,0 +1,13 @@
+# @package hydra
+run:
+  dir: outputs/run/${hydra.job.name}/${generator._target_}/${generator.feature_layer}_${generator.class_name}_${k}/${model._target_}_${projector._target_}/${now:%Y-%m-%d}
+sweep:
+  dir: outputs/multirun/${hydra.job.name}/${now:%Y-%m-%d_%H-%M-%S}
+  subdir: ${hydra.job.num}_${hydra.job.override_dirname}
+job:
+  config:
+    override_dirname:
+      exclude_keys:
+        - seed
+        - device
+        - generator.device

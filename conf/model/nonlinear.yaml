@@ -1,0 +1,5 @@
+# @package _group_
+_target_: colat.models.NonlinearConditional
+normalize: True
+alpha: 0.1
+depth: 3

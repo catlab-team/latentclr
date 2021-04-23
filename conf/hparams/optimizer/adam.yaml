@@ -1,0 +1,7 @@
+# @package _group_
+# By default, this group is not activated
+# If you want to change the optimizer from the default one in the configuration, \
+# override with +hparams/optimizer
+_target_: torch.optim.Adam
+lr: 0.001
+weight_decay: 1e-3

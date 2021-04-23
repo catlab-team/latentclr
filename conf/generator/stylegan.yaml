@@ -1,0 +1,7 @@
+# @package _group_
+_target_: colat.generators.StyleGANGenerator
+device: cuda
+truncation: 0.7
+class_name: ffhq
+use_w: true
+feature_layer: g_synthesis.blocks.1

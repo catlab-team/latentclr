@@ -1,0 +1,18 @@
+# @package _global_
+checkpoint: null
+
+tensorboard: true
+auto_cpu_if_no_gpu: true
+device: cuda:0
+mixed_precision: false
+save: true
+eval_freq: 1000
+eval_iters: 100
+
+hparams:
+  batch_size: 32
+  iterations: 10000
+
+k: 32
+feed_layers: null
+train_projector: true

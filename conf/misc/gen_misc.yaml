@@ -1,0 +1,14 @@
+# @package _global_
+checkpoint: ???
+
+auto_cpu_if_no_gpu: true
+device: cuda:0
+
+n_samples: 10
+n_dirs: 10
+alphas: [-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3]
+iterative: True
+image_size: 256
+
+k: 32
+feed_layers: null
