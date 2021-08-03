@@ -1,6 +1,6 @@
 import os
-import re
 import sys
+import random
 from pathlib import Path
 
 import numpy as np
@@ -200,7 +200,7 @@ class StyleGAN2Generator(Generator):
         ):
             out = conv1(out, latent[:, i], noise=noise[noise_i])
             if f"convs.{i-1}" in layer_name:
-                return out 
+                return out
 
             out = conv2(out, latent[:, i + 1], noise=noise[noise_i + 1])
             if f"convs.{i}" in layer_name:

@@ -1,19 +1,14 @@
-import logging
 import os
-from typing import Optional, Tuple
 
 import hydra
 import torch
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
-from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
 from colat.evaluator import Evaluator
-from colat.projectors import IdentityProjector, Projector
-from colat.scheduler import ExponentialDecayLR
+from colat.projectors import Projector
 from colat.trainer import Trainer
-from colat.utils.log_utils import flatten, to_clean_str
 from colat.visualizer import Visualizer
 
 
@@ -24,9 +19,6 @@ def train(cfg: DictConfig) -> None:
         cfg: Hydra config
 
     """
-    # Logger
-    logger = logging.getLogger()
-
     # Device
     device = get_device(cfg)
 
@@ -95,9 +87,6 @@ def evaluate(cfg: DictConfig) -> None:
     Args:
         cfg: Hydra config
     """
-    # Logger
-    logger = logging.getLogger()
-
     # Device
     device = get_device(cfg)
 
@@ -132,9 +121,6 @@ def generate(cfg: DictConfig) -> None:
     Args:
         cfg: Hydra config
     """
-    # Logger
-    logger = logging.getLogger()
-
     # Device
     device = get_device(cfg)
 

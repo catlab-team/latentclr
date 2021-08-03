@@ -4,7 +4,6 @@ from pathlib import Path
 
 import numpy as np
 import torch
-import torch.nn as nn
 
 import colat.utils.stylegan_helper as stylegan
 from colat.generators.abstract import Generator

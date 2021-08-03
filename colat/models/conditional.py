@@ -87,7 +87,7 @@ class NonlinearConditional(Model):
 
         for i in range(k):
             net = create_mlp(
-                depth=1,
+                depth=depth,
                 in_features=size,
                 middle_features=size,
                 out_features=size,

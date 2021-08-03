@@ -1,3 +1,4 @@
 [flake8]
 max-line-length = 88
 ignore = E731, E203, W605
+exclude = colat/generators/stylegan_tf,colat/generators/stylegan2-pytorch,colat/generators/biggan.py,colat/generators/stylegan.py,colat/generators/stylegan2.py,colat/utils/model_utils.py,colat/utils/stylegan_helper.py

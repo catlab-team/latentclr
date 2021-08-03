@@ -2,7 +2,7 @@ model:
   _target_: colat.models.NonlinearConditional
   normalize: true
   alpha: 0.1
-  depth: 3
+  depth: 1
   size: 512
 loss:
   _target_: colat.loss.ContrastiveLoss

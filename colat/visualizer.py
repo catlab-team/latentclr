@@ -8,7 +8,6 @@ import torchvision
 import torchvision.transforms as T
 import tqdm
 from PIL import Image, ImageDraw, ImageFont
-from torch.utils.data import DataLoader
 
 from colat.generators import Generator
 
@@ -70,7 +69,7 @@ class Visualizer:
             self.dirs = np.random.choice(self.model.k, n_dirs, replace=False)
         else:
             assert isinstance(n_dirs, list)
-            self.dirs = dirs
+            self.dirs = n_dirs
 
         # Alpha
         alphas = sorted(alphas)
@@ -116,14 +115,15 @@ class Visualizer:
             #  check if only one latent code is given
             assert z.shape[0] == 1 or z.shape[0] == len(
                 ks
-            ), "Only able to apply all directions to single latent code or apply each direction to single code"
+            ), """Only able to apply all directions to single latent code or
+                apply each direction to single code"""
             self.model.alpha = alpha
 
             # Apply Directions
             zs = []
             for i, k in enumerate(ks):
                 _i = i if z.shape[0] > 1 else 0
-                zs.append(self.model.forward_single(z[i : i + 1, ...], k=k))
+                zs.append(self.model.forward_single(z[_i : _i + 1, ...], k=k))
             zs = torch.cat(zs, dim=0)
             return zs
 

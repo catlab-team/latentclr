@@ -1,7 +1,3 @@
-from collections import OrderedDict
-
-import torch
-
 from colat.projectors import Projector
 from colat.utils.net_utils import create_mlp
 

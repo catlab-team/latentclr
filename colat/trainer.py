@@ -1,7 +1,7 @@
 import logging
 import os
 import time
-from typing import Optional, List
+from typing import List, Optional
 
 import torch
 import tqdm
@@ -45,14 +45,14 @@ class Trainer:
         device: torch.device,
         eval_freq: int = 1000,
         eval_iters: int = 100,
-        scheduler: Optional = None,  # Type: torch.optim.lr_scheduler._LRScheduler
+        scheduler: Optional[torch.optim.lr_scheduler._LRScheduler] = None,
         grad_clip_max_norm: Optional[float] = None,
         writer: Optional[SummaryWriter] = None,
         save_path: Optional[str] = None,
         checkpoint_path: Optional[str] = None,
         mixed_precision: bool = False,
         train_projector: bool = True,
-        feed_layers: Optional[List[int]] = None
+        feed_layers: Optional[List[int]] = None,
     ) -> None:
 
         # Logging
