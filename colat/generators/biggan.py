@@ -1,6 +1,6 @@
+import logging
 import os
 import re
-import logging
 from pathlib import Path
 
 import numpy as np
@@ -113,7 +113,7 @@ class BigGANMultiZ(nn.Module):
             z = self.n_latents * [z]
 
         if isinstance(class_label, list):
-            embed = [self.embeddings(l) for l in class_label]
+            embed = [self.embeddings(label) for label in class_label]
         else:
             embed = self.n_latents * [self.embeddings(class_label)]
 

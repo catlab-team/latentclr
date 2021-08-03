@@ -12,8 +12,8 @@ class ContrastiveLoss(nn.Module):
     Shape:
         - Input: the raw, feature scores.
                 tensor of size :math:`(k x minibatch, F)`, with F the number of features
-                expects first axis to be ordered by transformations first (i.e., the first
-                "minibatch" elements is for first transformations)
+                expects first axis to be ordered by transformations first (i.e., the
+                first "minibatch" elements is for first transformations)
         - Output: scalar
     """
 

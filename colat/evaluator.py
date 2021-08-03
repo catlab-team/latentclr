@@ -1,9 +1,8 @@
 import logging
-from typing import Optional, List
+from typing import List, Optional
 
 import torch
 import tqdm
-from torch.utils.data import DataLoader
 
 from colat.generators import Generator
 from colat.metrics import LossMetric
@@ -30,7 +29,7 @@ class Evaluator:
         device: torch.device,
         batch_size: int,
         iterations: int,
-        feed_layers: Optional[List[int]] = None
+        feed_layers: Optional[List[int]] = None,
     ) -> None:
         # Logging
         self.logger = logging.getLogger()
@@ -73,16 +72,16 @@ class Evaluator:
         for i in range(self.iterations):
             with torch.no_grad():
                 # To device
-                z = self.generator.sample_latent(self.batch_size)
-                z = z.to(self.device)
+                z_orig = self.generator.sample_latent(self.batch_size)
+                z_orig = z_orig.to(self.device)
 
                 # Original features
                 with torch.no_grad():
-                    orig_feats = self.generator.get_features(z)
+                    orig_feats = self.generator.get_features(z_orig)
                     orig_feats = self.projector(orig_feats)
 
                 # Apply Directions
-                z = self.model(z)
+                z = self.model(z_orig)
 
                 # Forward
                 features = []
@@ -116,8 +115,8 @@ class Evaluator:
 
                 # Loss
                 acc, loss = self.loss_fn(features)
-                self.acc_metric.update(acc.item(), z.shape[0])
-                self.loss_metric.update(loss.item(), z.shape[0])
+                self.acc_metric.update(acc.item(), z_orig.shape[0])
+                self.loss_metric.update(loss.item(), z_orig.shape[0])
 
                 # Update progress bar
                 pbar.update()
