@@ -1,3 +1,14 @@
+# coding: utf-8
+""" BigGAN PyTorch model.
+    From "Large Scale GAN Training for High Fidelity Natural Image Synthesis"
+    By Andrew Brocky, Jeff Donahuey and Karen Simonyan.
+    https://openreview.net/forum?id=B1xsqj09Fm
+    PyTorch version implemented from the computational graph of the TF Hub module for BigGAN.
+    Some part of the code are adapted from https://github.com/brain-research/self-attention-gan
+    This version only comprises the generator (since the discriminator's weights are not released).
+    This version only comprises the "deep" version of BigGAN (see publication).
+"""
+
 import logging
 import os
 import re
