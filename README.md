@@ -2,9 +2,13 @@
 
 ## Installation
 
-Install the dependencies in ``requirements.txt``and download the *wordnet* as follows:
-
+Install the dependencies in ``env.yml``
+``` console
+conda env create -f env.yml
 ```
+
+and download the *wordnet* as follows:
+``` python
 import nltk
 nltk.download('wordnet')
 ```
