@@ -8,6 +8,7 @@ import torchvision
 import torchvision.transforms as T
 import tqdm
 from PIL import Image, ImageDraw, ImageFont
+from omegaconf.listconfig import ListConfig
 
 from colat.generators import Generator
 
@@ -68,7 +69,7 @@ class Visualizer:
         elif isinstance(n_dirs, int):
             self.dirs = np.random.choice(self.model.k, n_dirs, replace=False)
         else:
-            assert isinstance(n_dirs, list)
+            assert isinstance(n_dirs, ListConfig)
             self.dirs = n_dirs
 
         # Alpha
@@ -250,5 +251,8 @@ class Visualizer:
                 imgs_grid = torch.cat([img_k, imgs_grid], dim=-1)
 
                 torchvision.utils.save_image(imgs_grid, f"sample_{i}.png")
+
+                # Update progress bar
+                pbar.update()
 
         pbar.close()
