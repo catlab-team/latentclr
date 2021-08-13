@@ -3,8 +3,9 @@
 ## Installation
 
 Install the dependencies in ``env.yml``
-``` console
-conda env create -f env.yml
+``` bash
+$ conda env create -f env.yml
+$ conda activate latentclr-env
 ```
 
 and download the *wordnet* as follows:
