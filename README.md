@@ -54,7 +54,7 @@ Generate 5 images from the first 4 directions of a pre-trained model located at 
 
 ```
 python gen.py \
-        --config-path=$PATH
+        --config-path="$PATH/.hydra"
         --config-name=config \
         checkpoint="$PATH/best_model.pt"
         +n_samples=5 \
