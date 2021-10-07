@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="##########">
+    <meta name="keywords" content="LatentCLR">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions</title>
+    <!-- BAAk -->
+    <!-- Global site tag (gtag.js) - Google Analytics  -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+
+
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">LatentCLR: A Contrastive Learning Approach for Unsupervised
+                        Discovery of Interpretable Directions</h1>
+                    <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://.com">Oguz Kaan Yuksel</a><sup>1</sup>,</span>
+                        <span class="author-block">
+              <a href="https://.com">Enis Simsar</a><sup>2,3</sup>,</span>
+                        <span class="author-block">
+              <a href="https://.info">Ezgi Gulperi Er</a><sup>3</sup>,
+            </span>
+                        <span class="author-block">
+              <a href="https://pinguar.org/">Pinar Yanardag</a><sup>3</sup>,
+            </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>EPFL,</span>
+                        <span class="author-block"><sup>2</sup>TUM,</span>
+                        <span class="author-block"><sup>3</sup>Bogazici University</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+
+                            <span class="link-block">
+                <a href="https://arxiv.org/abs/2104.00820"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+                            <!-- Video Link. -->
+                            <span class="link-block">
+                <a href="https://youtu.be/QWTbYaaaVO0"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+                            <!-- Code Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/catlab-team/latentclr"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Video</h2>
+
+                <figure class="image is-16by9">
+                    <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/QWTbYaaaVO0"
+                            frameborder="0" allowfullscreen></iframe>
+                </figure>
+            </div>
+        </div>
+        <!--/ Paper video. -->
+    </div>
+</section>
+
+
+<!--/ Paper video. -->
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+
+                    <p>
+                        Recent research has shown that it is possible to find interpretable
+                        directions in the latent spaces of pre-trained
+                        Generative Adversarial Networks (GANs). These directions
+                        enable controllable image generation and support a wide
+                        range of semantic editing operations, such as zoom or rotation.
+                        The discovery of such directions is often done in a
+                        supervised or semi-supervised manner and requires manual
+                        annotations which limits their use in practice. In comparison,
+                        unsupervised discovery allows finding subtle directions
+                        that are difficult to detect a priori.
+                    </p>
+                    <p>
+                        In this work, we propose a contrastive learning-based approach to discover semantic directions
+                        in the latent space of
+                        pre-trained GANs in a selfsupervised
+                        manner. Our approach finds semantically meaningful
+                        dimensions compatible with state-of-the-art methods.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+        <!--/ Abstract. -->
+        <br>
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">LatentCLR Framework</h2>
+
+                <div class="content has-text-justified">
+                    <img src="static/images/latentclr_graph.png">
+                    <p>
+
+                    <ul>
+                        <li>Direction models on the space yielding latent code edits: <i>D<sub>k</sub></i></li>
+                        <li>Target feature layer in the pre-trained GAN: <i>G<sub>f</sub></i></li>
+                        <li>Contrastive objective function based on NT-Xent loss</li>
+                    </ul>
+
+                    <div class='box blue'> z<sub>1</sub> is passed through directions models to obtain edits.</div>
+                    <div class='box green'> Generator is fed with obtained z<sub>k</sub> until target layer.</div>
+                    <div class='box yellow'> Original z<sub>1</sub> is also fed into the generator.</div>
+                    <div class='box pink'> The effects of each direction model is calculated by
+                        obtained feature representations with a subtraction.
+                    </div>
+                    <div class='box purple'> Same steps are executed for all z<sub>k</sub> in the batch.</div>
+                    <div class='box gray'> Feature differences yielded by the same direction model
+                        is considered positive while others as negative pairs. The
+                        aim is to establish unique footprint in the target feature
+                        layer for each direction and semantic disentanglement.
+                    </div>
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Re-rendering. -->
+        <h2 class="title is-3">Transferability of directions</h2>
+        <div class="content has-text-justified">
+            <p>
+                Our visual analysis shows that the directions learned
+                from the one ImageNet class are applicable to a variety of ImageNet
+                classes
+            </p>
+            <!--
+            <div class="publication-body">
+                <img src="static/images/class_agnostic.png" height="907">
+            </div>
+        </div>
+-->
+            <div class="columns is-centered">
+
+                <!-- Visual Effects. -->
+                <div class="column">
+                    <h3 class="title is-4">Zoom</h3>
+                    <div class="col-content">
+                        <div class="columns">
+                            <div class="column">
+                                <img src="static/gif/biggan_zoom_1__1__SparkVideo.gif">
+                            </div>
+                            <div class="column">
+                                <img src="static/gif/zoom_SparkVideo.gif">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Visual Effects. -->
+
+                <!-- Matting. -->
+                <div class="column">
+                    <h3 class="title is-4">Rotate</h3>
+
+                    <div class="col-content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <img src="static/gif/biggan_rotation_1__1__SparkVideo.gif">
+                            </div>
+                            <div class="column">
+                                <img src="static/gif/rotate_SparkVideo.gif">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!--/ Matting. -->
+
+            <div class="columns is-centered">
+
+                <!-- Visual Effects. -->
+                <div class="column">
+                    <h3 class="title is-4">Contrast</h3>
+
+                    <div class="col-content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <img src="static/gif/biggan_contrast_1_SparkVideo.gif">
+                            </div>
+                            <div class="column">
+                                <img
+                                        src="static/gif/conrast_SparkVideo.gif">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--/ Visual Effects. -->
+
+                <!-- Matting. -->
+                <div class="column">
+                    <h3 class="title is-4">Sitting</h3>
+
+                    <div class="col-content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <img src="static/gif/biggan_sit2standup_1__1__SparkVideo.gif">
+                            </div>
+                            <div class="column">
+                                <img
+                                        src="static/gif/sit2standup_SparkVideo.gif">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- Animation. -->
+
+        </div>
+    </div>
+</section>
+
+
+<section>
+
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Diversity of the directions</h2>
+
+                <div class="content has-text-justified">
+                    <p>
+                        We propose to use contrastive learning on feature divergences
+                        to discover interpretable directions in the latent
+                        space of pre-trained GAN models such as Style-
+                        GAN2 and BigGAN.
+                    </p>
+                </div>
+
+                <div class="container is-max-desktop">
+                    <h2 class="title is-4">StyleGAN2 Directions</h2>
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <img src="static/gif/bedrooms_lamp_114__1__SparkVideo.gif">
+                        </div>
+                        <div class="item">
+                            <img src="static/gif/bedrooms_window_2_SparkVideo.gif">
+                        </div>
+                        <div class="item item-shiba">
+                            <img src="static/gif/car_type_4_1007__1__SparkVideo.gif">
+                        </div>
+                        <div class="item item-fullbody">
+                            <img src="static/gif/cat_breed_36_SparkVideo.gif">
+                        </div>
+                        <div class="item item-blueshirt">
+                            <img src="static/gif/cat_fluffines_119__2__SparkVideo.gif">
+
+                        </div>
+                        <div class="item item-mask">
+                            <img src="static/gif/church_style_66_SparkVideo.gif">
+
+                        </div>
+                        <div class="item item-mask">
+                            <img src="static/gif/horse_add_rider_2_98__2__SparkVideo.gif">
+
+                        </div>
+
+                    </div>
+                    <div class="content has-text-justified">
+                        <div class="columns is-centered">
+                            <div class="column is-full-width">
+                                <div class="publication-body">
+                                    <img src="static/images/stylegan_ours.png" height="940">
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                        <div class="columns is-centered">
+                            <div class="column is-full-width">
+                                <h2 class="title is-4">BigGAN Directions </h2>
+                                <div class="publication-body">
+                                    <img src="static/images/class_specific.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<section>
+
+    <div class="container is-max-desktop">
+        <!-- Re-rendering. -->
+        <h2 class="title is-3">Comparison with other methods</h2>
+        <div class="content has-text-justified">
+            <p>
+                We compare how the
+                directions found on FFHQ differ across methods. Figure shows the visual comparison between several
+                directions found in common by all methods, including the directions
+                Smile, Lipstick, Elderly, Curly Hair , and Young.
+            </p>
+            <img src="static/images/full_comparison.png">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@misc{yüksel2021latentclr,
+      title={LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions},
+      author={Oğuz Kaan Yüksel and Enis Simsar and Ezgi Gülperi Er and Pinar Yanardag},
+      year={2021},
+      eprint={2104.00820},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}</code></pre>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website is licensed under a <a rel="license"
+                                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                    <p>
+                        Template from <a
+                            href="https://github.com/nerfies/nerfies.github.io">nerfies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
