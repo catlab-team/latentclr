@@ -2,13 +2,6 @@
 
 This is the repository that contains source code for the [LatentCLR website](https://catlab-team.github.io/latentclr/).
 
-![image](https://user-images.githubusercontent.com/34350876/136621888-5fe74002-8a1f-40d5-8087-82cb1b4fe31d.png)
-
-Recent research has shown that it is possible to find interpretable directions in the latent spaces of pre-trained Generative Adversarial Networks (GANs). These directions enable controllable image generation and support a wide range of semantic editing operations, such as zoom or rotation. The discovery of such directions is often done in a supervised or semi-supervised manner and requires manual annotations which limits their use in practice. In comparison, unsupervised discovery allows finding subtle directions that are difficult to detect a priori.
-
-In this work, we propose a contrastive learning-based approach to discover semantic directions in the latent space of pre-trained GANs in a selfsupervised manner. Our approach finds semantically meaningful dimensions compatible with state-of-the-art methods.
-
-
 
 If you find our work useful please cite:
 ```
