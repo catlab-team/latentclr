@@ -5,13 +5,13 @@ This is the repository that contains source code for the [LatentCLR website](htt
 
 If you find our work useful please cite:
 ```
-@misc{yüksel2021latentclr,
-      title={LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions},
-      author={Oğuz Kaan Yüksel and Enis Simsar and Ezgi Gülperi Er and Pinar Yanardag},
-      year={2021},
-      eprint={2104.00820},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{yuksel2021latentclr,
+  title={LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions},
+  author={Y{\"u}ksel, O{\u{g}}uz Kaan and Simsar, Enis and Er, Ezgi G{\"u}lperi and Yanardag, Pinar},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month={October},
+  year={2021},
+  pages={14263-14272}
 }
 ```
 
