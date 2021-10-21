@@ -49,7 +49,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered">
                 <div class="column has-text-centered">
-                                     <h3 class="title is-4">In ICCV 2021</h3>
+                    <h3 class="title is-4">In ICCV 2021</h3>
 
                     <h1 class="title is-1 publication-title">LatentCLR: A Contrastive Learning Approach for Unsupervised
                         Discovery of Interpretable Directions</h1>
@@ -70,11 +70,6 @@
                         <span class="author-block"><sup>1</sup>EPFL,</span>
                         <span class="author-block"><sup>2</sup>TUM,</span>
                         <span class="author-block"><sup>3</sup>Bogazici University</span>
-                    </div>
-                            
-                    <div class="is-size-5 publication-authors">
-                        <span class="author-block">
-                            <span><small><sup>*</sup>Denotes equal contribution</small></span>
                     </div>
 
                     <div class="column has-text-centered">
@@ -236,9 +231,6 @@
                     <h2 class="title is-4">StyleGAN2 Directions</h2>
                     <div id="results-carousel" class="carousel results-carousel">
 
-                        <div class="item">
-                            <img src="static/gif/bedrooms_window_2_SparkVideo.gif">
-                        </div>
                         <div class="item item-shiba">
                             <img src="static/gif/car_type_4_1007__1__SparkVideo.gif">
                         </div>
@@ -261,6 +253,14 @@
                             <div class="column is-full-width">
                                 <div class="publication-body">
                                     <img src="static/images/vertical_new.png" height="940">
+                                    <em>
+                                        Directions discovered by our method
+                                        in FFHQ dataset with StyleGAN2 (left).
+                                        <br>
+                                        Different types of
+                                        smile directions (denoted with SMILE 1-3) discovered by
+                                        the non-linear approach (right).
+                                    </em>
                                 </div>
 
                             </div>
@@ -271,6 +271,8 @@
                                 <h2 class="title is-4">BigGAN Directions </h2>
                                 <div class="publication-body">
                                     <img src="static/images/class_specific.png">
+                                    <em>Class-specific directions discovered by our method in several ImageNet classes on
+                                        the BigGAN model.</em>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +291,8 @@
             <p>
                 Our visual analysis shows that the directions learned
                 from the one ImageNet class are applicable to a variety of ImageNet
-                classes
+                classes. Below you can find the transferred directions from
+                the Bulbul class to various other ImageNet classes.
             </p>
             <!--
             <div class="publication-body">
@@ -401,6 +404,10 @@
                 Smile, Lipstick, Elderly, Curly Hair , and Young.
             </p>
             <img src="static/images/full_comparison.png">
+            <em>Comparison of manipulation results on FFHQ dataset with Ganspace and SeFa methods. The leftmost image
+                represents the original image, while images denoted with &#8593; and &#8595; represent the edited image moved in the
+                positive or negative
+                direction.</em>
         </div>
 
     </div>
@@ -411,13 +418,13 @@
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>@inproceedings{yuksel2021latentclr,
-  title={LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions},
-  author={Y{\"u}ksel, O{\u{g}}uz Kaan and Simsar, Enis and Er, Ezgi G{\"u}lperi and Yanardag, Pinar},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  month={October},
-  year={2021},
-  pages={14263-14272}
+        <pre><code>@misc{yüksel2021latentclr,
+      title={LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions},
+      author={Oğuz Kaan Yüksel and Enis Simsar and Ezgi Gülperi Er and Pinar Yanardag},
+      year={2021},
+      eprint={2104.00820},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
 }</code></pre>
     </div>
 </section>
