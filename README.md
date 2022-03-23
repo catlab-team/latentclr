@@ -1,6 +1,6 @@
 #  LatentCLR: A Contrastive Learning Approach for Unsupervised Discovery of Interpretable Directions 
 
-![stylegan_ours](https://user-images.githubusercontent.com/34350876/136622590-1e6dc067-c2ba-4b80-a1e2-507bdede1143.png)
+![stylegan_ours](https://user-images.githubusercontent.com/63148269/159662813-aebb649a-4da3-434e-8157-51cb14d40861.png)
 
 > https://arxiv.org/abs/2104.00820
 
